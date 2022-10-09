@@ -1,8 +1,7 @@
 var class_block_params =
 [
-    [ "params", "class_block_params.html#ae8f4f8ca0607596ec677e1597ed95de3", null ],
-    [ "type", "class_block_params.html#a91c01876f344ff39aeab2ada35cdee7b", null ],
-    [ "x", "class_block_params.html#ab7fbee35b9fb9fcc2a9ac9d05c34b492", null ],
-    [ "y", "class_block_params.html#a84982dcf8ffa56c0e1ee30510bb0d317", null ],
-    [ "z", "class_block_params.html#a7593c798a41eda3dcbcf28a9da9c2e93", null ]
+    [ "get_param", "class_block_params.html#ad2e74e9c4056a17a4b48c761b327264f", null ],
+    [ "set_color", "class_block_params.html#a4b1978cd09fd019648f8310487101c9a", null ],
+    [ "set_model", "class_block_params.html#a26ef7ab53fa9bd8a0d7011812d4ea4c6", null ],
+    [ "set_param", "class_block_params.html#acad207a7725e5478ee7662a06ce583ef", null ]
 ];

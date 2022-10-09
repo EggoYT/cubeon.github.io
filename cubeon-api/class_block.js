@@ -1,8 +1,7 @@
 var class_block =
 [
+    [ "in_group", "class_block.html#a8ead7c5f976111971859ac573d1c8691", null ],
     [ "dynamic_params", "class_block.html#a3091a614d2f1348cbb43d312253fd0ab", null ],
-    [ "index", "class_block.html#a14a674958cacface10b237ce38e6e83e", null ],
-    [ "name", "class_block.html#a45562723c6f38c69581e6ce8436e6640", null ],
-    [ "static_params", "class_block.html#a31eb1e0af8b660dd2b4ae8b0392828f3", null ],
-    [ "texture_path", "class_block.html#a98c006553fb3610e7454e733e9835ca3", null ]
+    [ "groups", "class_block.html#ac1f23804da82573c6db978d120c01951", null ],
+    [ "static_params", "class_block.html#a31eb1e0af8b660dd2b4ae8b0392828f3", null ]
 ];

@@ -116,9 +116,10 @@ $(document).ready(function(){initNavTree('script_registering_8lua-example.html',
 <p >This is an example how to register script in assets/scripts/utils.lua</p>
 <div class="fragment"><div class="line">modules = {}; <span class="comment">// Create new module</span></div>
 <div class="line">blocks = {}; <span class="comment">// Create blocks group for scripts</span></div>
+<div class="line">types = {};</div>
 <div class="line">modules[0] = <span class="stringliteral">&quot;script1&quot;</span>; <span class="comment">// Adding scripts into modules as array</span></div>
 <div class="line">modules[1] = <span class="stringliteral">&quot;script2&quot;</span>;</div>
-<div class="line">modules[n] = <span class="stringliteral">&quot;your_script_name&quot;</span>;</div>
+<div class="line">modules[n] = <span class="stringliteral">&quot;your_script_name&quot;</span>; <span class="comment">// Script name in folder assets/scripts/blocks without &quot;.lua&quot;</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.4-->

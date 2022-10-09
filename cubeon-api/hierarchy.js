@@ -5,7 +5,9 @@ var hierarchy =
     [ "BlockParams", "class_block_params.html", null ],
     [ "Chunk", "class_chunk.html", null ],
     [ "Entity", "class_entity.html", [
-      [ "Player", "class_player.html", null ]
+      [ "player", "classplayer.html", null ]
     ] ],
-    [ "Object", "class_object.html", null ]
+    [ "ivec2", "group___math_a_p_i.html#classivec2", null ],
+    [ "ivec3", "group___math_a_p_i.html#classivec3", null ],
+    [ "Slot", "group___u_i.html#class_slot", null ]
 ];

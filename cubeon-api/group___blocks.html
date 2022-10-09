@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>CubeOn: Member List</title>
+<title>CubeOn: Blocks</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -91,7 +91,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_object.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group___blocks.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -110,19 +110,81 @@ $(document).ready(function(){initNavTree('class_object.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Object Member List</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">Blocks<div class="ingroups"><a class="el" href="group___world.html">World</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="class_object.html">Object</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_object.html#a36e507250b7f2c49fa76ab0d5918ca62">getFloat</a>()</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_object.html#a62b48a5d57e511a4d54bbf667cea8852">getInt</a>()</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_object.html#af7827d71f6acc4e3d6b22b66a8c1f356">getString</a>()</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_object.html#a13020e8150a70d992765cb6b114580f3">setFloat</a>(value)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_object.html#aa19e616a1ced853333d60d94b1973cfc">setInt</a>(value)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_object.html#ae8f57ad84dae54a7d9febfb37f55c064">setString</a>(value)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Namespace of block dictionary.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga623713ebedd4e04dd592e92871c6d270"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___blocks.html#ga623713ebedd4e04dd592e92871c6d270">getBlockById</a> (id)</td></tr>
+<tr class="separator:ga623713ebedd4e04dd592e92871c6d270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga969d53dd05c13c59df2941f85ee24f77"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___blocks.html#ga969d53dd05c13c59df2941f85ee24f77">getBlockByName</a> (name)</td></tr>
+<tr class="separator:ga969d53dd05c13c59df2941f85ee24f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p >Namespace of block dictionary. </p>
+<p >You can get block object from this dictionary </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga623713ebedd4e04dd592e92871c6d270" name="ga623713ebedd4e04dd592e92871c6d270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga623713ebedd4e04dd592e92871c6d270">&#9670;&nbsp;</a></span>getBlockById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_block.html">Block</a> getBlockById </td>
+          <td>(</td>
+          <td class="paramtype">id&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >return block object by its id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>of block </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>object of block with this id </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>id 0 return nil object, because 0 is air </dd></dl>
+
+</div>
+</div>
+<a id="ga969d53dd05c13c59df2941f85ee24f77" name="ga969d53dd05c13c59df2941f85ee24f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga969d53dd05c13c59df2941f85ee24f77">&#9670;&nbsp;</a></span>getBlockByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_block.html">Block</a> getBlockByName </td>
+          <td>(</td>
+          <td class="paramtype">name&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >return block object by its name </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>of block </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>object of block with this name </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>name "air" or another not-registered name return nil object, that means "void" </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="new_script_8lua-example.html#a3">new_script.lua</a>.</dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.4-->
 <!-- start footer part -->

@@ -115,46 +115,82 @@ $(document).ready(function(){initNavTree('new_script_8lua-example.html',''); ini
 <div class="contents">
 <p >This is an example of creating script for blocks</p>
 <div class="fragment"><div class="line"><span class="comment">// Warning! Links on documentation can work wrong. Be careful.</span></div>
+<div class="line"><span class="comment">// You may to not define some functions, if you don&#39;t want to describe them</span></div>
 <div class="line">blocks.example = {} <span class="comment">// as an &quot;example&quot; means real block name.</span></div>
 <div class="line">blocks.example.type = <span class="stringliteral">&quot;cubeon.example&quot;</span> <span class="comment">// Here you need to put which type of blocks this script will process.</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Local variables needs to init some information unique for this script.</span></div>
 <div class="line"><span class="comment">// Don&#39;t create global variables, it&#39;s can breake system working.</span></div>
-<div class="line">local block;</div>
-<div class="line">local param1;</div>
-<div class="line">local param2;</div>
+<div class="line">local block</div>
+<div class="line">local param1</div>
+<div class="line">local param2</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This is an init function. Here you can prepare your local variables for future use in tick function.</span></div>
 <div class="line"><span class="comment">// In example, here, I get Block object of this script, and get it&#39;s static_params, which means constants.</span></div>
 <div class="line">function blocks.example.init()</div>
 <div class="line">    block = World.Blocks.getBlockByName(blocks.example.type)</div>
-<div class="line">    param1 = block.static_params[<span class="stringliteral">&quot;param1&quot;</span>]:<a id="a0" name="a0"></a><a class="code hl_function" href="class_object.html#a62b48a5d57e511a4d54bbf667cea8852">getInt</a>();</div>
-<div class="line">    param2 = block.static_params[<span class="stringliteral">&quot;param2&quot;</span>]:<a id="a1" name="a1"></a><a class="code hl_function" href="class_object.html#af7827d71f6acc4e3d6b22b66a8c1f356">getString</a>();</div>
+<div class="line">    param1 = block.static_params[<span class="stringliteral">&quot;param1&quot;</span>]</div>
+<div class="line">    param2 = block.static_params[<span class="stringliteral">&quot;param2&quot;</span>]</div>
 <div class="line">end;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This is an tick function. It&#39;s calls every tick (20 times per second) for each loaded Chunk and each &quot;active&quot; Block type, placed into chunk.</span></div>
 <div class="line"><span class="comment">// If Chunk haven&#39;t placed blocks of this type, this function will not call for this chunk. 1 chunk - 1 call per tick</span></div>
-<div class="line"><span class="comment">// here &quot;x&quot; and &quot;z&quot; means coordinates of current Chunk, whose blocks are passed into &quot;arr&quot; as BlockArray </span></div>
-<div class="line"><span class="comment">// &quot;x&quot; and &quot;z&quot; have int types</span></div>
-<div class="line">function blocks.example.tick(<a id="a2" name="a2"></a><a class="code hl_variable" href="class_chunk.html#a1423a24f7f898b0b301df21bbc5414ce">x</a>, <a id="a3" name="a3"></a><a class="code hl_variable" href="class_chunk.html#ab13e42c4cd91eba7941c4e1a6d22f2ec">z</a>, arr)</div>
+<div class="line"><span class="comment">// here &quot;chunk&quot; means object of current Chunk, whose blocks are passed into &quot;arr&quot; as BlockArray </span></div>
+<div class="line">function blocks.example.tick(chunk, arr)</div>
 <div class="line">    <span class="comment">// And here you can use documented functions.</span></div>
 <div class="line">    <span class="comment">// As an example, I break specific block under those type block</span></div>
+<div class="line">    local <a id="a0" name="a0"></a><a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a> <span class="comment">//Try to create local variables before. It can boost your script</span></div>
+<div class="line">    local underBlock</div>
 <div class="line">    <span class="keywordflow">for</span> i = 0, arr.size - 1 <span class="keywordflow">do</span> <span class="comment">// Basic cycle for all blocks in chunk, placed in BlockArray</span></div>
-<div class="line">        <a id="a4" name="a4"></a><a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a> = arr:<a id="a5" name="a5"></a><a class="code hl_function" href="class_block_array.html#a09b34f7d16b28eed23d6cca7068b8042">get</a>(i); <span class="comment">// Get current BlockParams object </span></div>
-<div class="line">        underBlock = World.getBlock(<a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.x + <a class="code hl_variable" href="class_chunk.html#a1423a24f7f898b0b301df21bbc5414ce">x</a> * 16, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.y - 1, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.z + <a class="code hl_variable" href="class_chunk.html#ab13e42c4cd91eba7941c4e1a6d22f2ec">z</a> * 16); <span class="comment">// Get block under ours. Don&#39;t forget add chunk coords to block!</span></div>
-<div class="line">        <span class="keywordflow">if</span> (underBlock ~= 0) and (World.Blocks.getBlockById(underBlock).name == <span class="stringliteral">&quot;cubeon.someBlock&quot;</span>) then <span class="comment">// Check block under those. If block is that, what we need, then remove it.</span></div>
-<div class="line">            World.<a id="a6" name="a6"></a><a class="code hl_function" href="group__world.html#ga3252cdc75ea3381395428b8ba5552a6f">setBlock</a>(<a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.<a class="code hl_variable" href="class_chunk.html#a1423a24f7f898b0b301df21bbc5414ce">x</a> + <a class="code hl_variable" href="class_chunk.html#a1423a24f7f898b0b301df21bbc5414ce">x</a> * 16, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.<a id="a7" name="a7"></a><a class="code hl_variable" href="class_entity.html#a085768339c5a02bb76b85f5f7f6334b2">y</a> - 1, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.<a class="code hl_variable" href="class_chunk.html#ab13e42c4cd91eba7941c4e1a6d22f2ec">z</a> + <a class="code hl_variable" href="class_chunk.html#ab13e42c4cd91eba7941c4e1a6d22f2ec">z</a> * 16, 0); <span class="comment">// 0 type is Air</span></div>
-<div class="line">        end;</div>
-<div class="line">    end;</div>
-<div class="line">end;</div>
+<div class="line">        <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a> = arr:<a id="a1" name="a1"></a><a class="code hl_function" href="class_block_array.html#a09b34f7d16b28eed23d6cca7068b8042">get</a>(i) <span class="comment">// Get current BlockParams object </span></div>
+<div class="line">        underBlock = World.getBlock(<a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.x + chunk.x * 16, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.y - 1, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.z + chunk.z * 16) <span class="comment">// Get block under ours. Don&#39;t forget add chunk coords to block!</span></div>
+<div class="line">        <span class="keywordflow">if</span> (underBlock ~= 0) and (World.Blocks.getBlockById(underBlock).name == <span class="stringliteral">&quot;cubeon.some_block&quot;</span>) then <span class="comment">// Check block under those. If block is that, what we need, then remove it.</span></div>
+<div class="line">            World.<a id="a2" name="a2"></a><a class="code hl_function" href="group___world.html#ga3252cdc75ea3381395428b8ba5552a6f">setBlock</a>(<a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.x + x * 16, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.y - 1, <a class="code hl_variable" href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">blockParams</a>.z + z * 16, 0) <span class="comment">// 0 type is Air</span></div>
+<div class="line">        end</div>
+<div class="line">    end</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//This is events. Events calls when something happenning with block or near it</span></div>
+<div class="line"><span class="comment">//You can use events to optimize ticking and catch moments, what ticking can&#39;t operate</span></div>
+<div class="line"><span class="comment">//It&#39;s also optimizing moment in API</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Create event. It&#39;s calls only once for block, when block set (created in world)</span></div>
+<div class="line">function blocks.example.on_create(chunk, block_param)</div>
+<div class="line">    local gx = block_param.x + chunk.x * 16 <span class="comment">// Try to avoid extra calculations. Here I take out of cycle coordinates calculations</span></div>
+<div class="line">    local gy = block_param.y</div>
+<div class="line">    local gz = block_param.z + chunk.z * 16</div>
+<div class="line">    </div>
+<div class="line">    local set_type = World.Blocks.<a id="a3" name="a3"></a><a class="code hl_function" href="group___blocks.html#ga969d53dd05c13c59df2941f85ee24f77">getBlockByName</a>(&quot;cubeon.some_block&quot;).<a id="a4" name="a4"></a><a class="code hl_variable" href="group___u_i.html#ae64d20aa6a3922fbe478462106806183">index</a></div>
+<div class="line">    </div>
+<div class="line">    for y = 1, 10 do</div>
+<div class="line">        World.<a class="code hl_function" href="group___world.html#ga3252cdc75ea3381395428b8ba5552a6f">setBlock</a>(gx, gy + y, gz, <a class="code hl_variable" href="group___u_i.html#ae64d20aa6a3922fbe478462106806183">index</a>)</div>
+<div class="line">    end</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Destroy event. It&#39;s calls only once for block, when block removed (destroyed in world)</span></div>
+<div class="line">function blocks.example.on_destroy(chunk, block_param)</div>
+<div class="line">    <span class="comment">// I think you can create your own code for this event)))</span></div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Use event. It&#39;s calls when player use (right click) block</span></div>
+<div class="line"><span class="comment">//Function need return true if player needn&#39;t to place something near and false otherwise</span></div>
+<div class="line"><span class="comment">//active_slot is Slot object, which contains active slot when used on block</span></div>
+<div class="line"><span class="comment">//face is int: 0 is -x, 1 is +x, 2 is -y, 3 is +y, 4 is -z, 5 is +z</span></div>
+<div class="line">function block.example.on_use(chunk, block_param, active_slot, face)</div>
+<div class="line">    return true <span class="comment">//something happened. cancel setting block</span></div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Neighbor changed event. It&#39;s calls when near to this block was placed or removed block (any type)</span></div>
+<div class="line"><span class="comment">//block is Block object of changed block. nil if block value is air (0)</span></div>
+<div class="line"><span class="comment">//offset is offset position where block was changed relatively those</span></div>
+<div class="line">function block.example.on_neighbor_changed(chunk, block_param, block, offset)</div>
+<div class="line">    <span class="comment">//And there some code. For example, check which block was changed</span></div>
+<div class="line">end</div>
 <div class="ttc" id="aclass_block_array_html_a09b34f7d16b28eed23d6cca7068b8042"><div class="ttname"><a href="class_block_array.html#a09b34f7d16b28eed23d6cca7068b8042">BlockArray::get</a></div><div class="ttdeci">BlockParams get(index)</div></div>
-<div class="ttc" id="aclass_chunk_html_a1423a24f7f898b0b301df21bbc5414ce"><div class="ttname"><a href="class_chunk.html#a1423a24f7f898b0b301df21bbc5414ce">Chunk::x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> game.lua:77</div></div>
-<div class="ttc" id="aclass_chunk_html_aa81777a2193ce9ded689a7754d30b42c"><div class="ttname"><a href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">Chunk::blockParams</a></div><div class="ttdeci">blockParams</div><div class="ttdef"><b>Definition:</b> game.lua:82</div></div>
-<div class="ttc" id="aclass_chunk_html_ab13e42c4cd91eba7941c4e1a6d22f2ec"><div class="ttname"><a href="class_chunk.html#ab13e42c4cd91eba7941c4e1a6d22f2ec">Chunk::z</a></div><div class="ttdeci">z</div><div class="ttdef"><b>Definition:</b> game.lua:79</div></div>
-<div class="ttc" id="aclass_entity_html_a085768339c5a02bb76b85f5f7f6334b2"><div class="ttname"><a href="class_entity.html#a085768339c5a02bb76b85f5f7f6334b2">Entity::y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> game.lua:88</div></div>
-<div class="ttc" id="aclass_object_html_a62b48a5d57e511a4d54bbf667cea8852"><div class="ttname"><a href="class_object.html#a62b48a5d57e511a4d54bbf667cea8852">Object::getInt</a></div><div class="ttdeci">int getInt()</div></div>
-<div class="ttc" id="aclass_object_html_af7827d71f6acc4e3d6b22b66a8c1f356"><div class="ttname"><a href="class_object.html#af7827d71f6acc4e3d6b22b66a8c1f356">Object::getString</a></div><div class="ttdeci">string getString()</div></div>
-<div class="ttc" id="agroup__world_html_ga3252cdc75ea3381395428b8ba5552a6f"><div class="ttname"><a href="group__world.html#ga3252cdc75ea3381395428b8ba5552a6f">setBlock</a></div><div class="ttdeci">function setBlock(x, y, z, type)</div></div>
+<div class="ttc" id="aclass_chunk_html_aa81777a2193ce9ded689a7754d30b42c"><div class="ttname"><a href="class_chunk.html#aa81777a2193ce9ded689a7754d30b42c">Chunk::blockParams</a></div><div class="ttdeci">blockParams</div><div class="ttdef"><b>Definition:</b> game.lua:90</div></div>
+<div class="ttc" id="agroup___blocks_html_ga969d53dd05c13c59df2941f85ee24f77"><div class="ttname"><a href="group___blocks.html#ga969d53dd05c13c59df2941f85ee24f77">getBlockByName</a></div><div class="ttdeci">function getBlockByName(name)</div></div>
+<div class="ttc" id="agroup___u_i_html_ae64d20aa6a3922fbe478462106806183"><div class="ttname"><a href="group___u_i.html#ae64d20aa6a3922fbe478462106806183">Slot::index</a></div><div class="ttdeci">index</div><div class="ttdoc">index of block, 0 is nothing (air)</div><div class="ttdef"><b>Definition:</b> game.lua:220</div></div>
+<div class="ttc" id="agroup___world_html_ga3252cdc75ea3381395428b8ba5552a6f"><div class="ttname"><a href="group___world.html#ga3252cdc75ea3381395428b8ba5552a6f">setBlock</a></div><div class="ttdeci">function setBlock(x, y, z, type)</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.4-->
