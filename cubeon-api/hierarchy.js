@@ -1,13 +1,15 @@
 var hierarchy =
 [
-    [ "Block", "class_block.html", null ],
-    [ "BlockArray", "class_block_array.html", null ],
-    [ "BlockParams", "class_block_params.html", null ],
-    [ "Chunk", "class_chunk.html", null ],
-    [ "Entity", "class_entity.html", [
-      [ "player", "classplayer.html", null ]
-    ] ],
-    [ "ivec2", "group___math_a_p_i.html#classivec2", null ],
-    [ "ivec3", "group___math_a_p_i.html#classivec3", null ],
-    [ "Slot", "group___u_i.html#class_slot", null ]
+    [ "ivec2", "group__MathAPI.html#classMathAPI_1_1ivec2", null ],
+    [ "ivec3", "group__MathAPI.html#classMathAPI_1_1ivec3", null ],
+    [ "lvec3", "group__MathAPI.html#classMathAPI_1_1lvec3", null ],
+    [ "Slot", "group__UI.html#classUI_1_1Slot", null ],
+    [ "Block", "group__World.html#classWorld_1_1Block", null ],
+    [ "BlockArray", "group__World.html#classWorld_1_1BlockArray", null ],
+    [ "BlockState", "group__World.html#classWorld_1_1BlockState", null ],
+    [ "BlockStruct", "group__World.html#classWorld_1_1BlockStruct", null ],
+    [ "Chunk", "group__World.html#classWorld_1_1Chunk", null ],
+    [ "Entity", "group__World.html#classWorld_1_1Entity", [
+      [ "Player", "group__World.html#classWorld_1_1Player", null ]
+    ] ]
 ];

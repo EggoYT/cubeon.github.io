@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['set_5fcolor_0',['set_color',['../class_block_params.html#a4b1978cd09fd019648f8310487101c9a',1,'BlockParams']]],
-  ['set_5fmodel_1',['set_model',['../class_block_params.html#a26ef7ab53fa9bd8a0d7011812d4ea4c6',1,'BlockParams']]],
-  ['set_5fparam_2',['set_param',['../class_block_params.html#acad207a7725e5478ee7662a06ce583ef',1,'BlockParams']]],
-  ['setblock_3',['setBlock',['../group___world.html#ga3252cdc75ea3381395428b8ba5552a6f',1,'game.lua']]],
-  ['setpos_4',['setPos',['../class_entity.html#abe0250ef98c8713842ff01775353c576',1,'Entity']]]
+  ['in_5fgroup_0',['in_group',['../group__World.html#abf53ca77c0e94681daa277071a3dfa1f',1,'World::Block']]],
+  ['is_5factive_1',['is_active',['../group__World.html#adc5260e7eba946182b172d0385d19c7e',1,'World::BlockState']]],
+  ['is_5fblock_2',['is_block',['../group__World.html#ga4cdfc7725e311b7360f443e18974d940',1,'World']]],
+  ['is_5fbox_5ffull_3',['is_box_full',['../group__World.html#ab321f89be02aa88869d8067d5de81725',1,'World::BlockState']]],
+  ['is_5fface_5frender_4',['is_face_render',['../group__World.html#ad901ee87e9cc5b4a1ae666393428c399',1,'World::BlockState']]],
+  ['is_5fwrong_5',['is_wrong',['../group__World.html#a2a0c91f2df5d66e00ff23c7648eef5c1',1,'World::BlockArray']]],
+  ['isblock_6',['isBlock',['../group__World.html#ac3ccc4bcd0ca0afc384221b7f4456b44',1,'World::Chunk']]],
+  ['ivec2_7',['ivec2',['../group__MathAPI.html#a5d71aba6870321a7cdbb9b32ced4d97b',1,'MathAPI::ivec2']]],
+  ['ivec3_8',['ivec3',['../group__MathAPI.html#a547c9be3c3525531748a824c0447fd12',1,'MathAPI::ivec3']]]
 ];

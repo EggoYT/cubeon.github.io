@@ -1,6 +1,11 @@
 var examples =
 [
-    [ "new_script.lua", "new_script_8lua-example.html", null ],
-    [ "script_registering.lua", "script_registering_8lua-example.html", null ],
-    [ "create_block_object.json", "create_block_object_8json-example.html", null ]
+    [ "piston.lua", "piston_8lua-example.html", null ],
+    [ "redstone.lua", "redstone_8lua-example.html", null ],
+    [ "sand.lua", "sand_8lua-example.html", null ],
+    [ "stairs.lua", "stairs_8lua-example.html", null ],
+    [ "grass.json", "grass_8json-example.html", null ],
+    [ "log.json", "log_8json-example.html", null ],
+    [ "stairs.json", "stairs_8json-example.html", null ],
+    [ "stone_stairs.json", "stone_stairs_8json-example.html", null ]
 ];

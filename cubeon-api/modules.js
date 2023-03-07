@@ -1,6 +1,8 @@
 var modules =
 [
-    [ "MathAPI", "group___math_a_p_i.html", "group___math_a_p_i" ],
-    [ "UI", "group___u_i.html", "group___u_i" ],
-    [ "World", "group___world.html", "group___world" ]
+    [ "Enums", "group__enums.html", "group__enums" ],
+    [ "MathAPI", "group__MathAPI.html", "group__MathAPI" ],
+    [ "UI", "group__UI.html", "group__UI" ],
+    [ "Utils", "group__Utils.html", "group__Utils" ],
+    [ "World", "group__World.html", "group__World" ]
 ];

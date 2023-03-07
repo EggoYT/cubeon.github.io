@@ -1,12 +1,20 @@
 var annotated_dup =
 [
-    [ "Block", "class_block.html", "class_block" ],
-    [ "BlockArray", "class_block_array.html", "class_block_array" ],
-    [ "BlockParams", "class_block_params.html", "class_block_params" ],
-    [ "Chunk", "class_chunk.html", "class_chunk" ],
-    [ "Entity", "class_entity.html", "class_entity" ],
-    [ "ivec2", "group___math_a_p_i.html#classivec2", null ],
-    [ "ivec3", "group___math_a_p_i.html#classivec3", null ],
-    [ "player", "classplayer.html", null ],
-    [ "Slot", "group___u_i.html#class_slot", "group___u_i_class_slot" ]
+    [ "MathAPI", "namespaceMathAPI.html", [
+      [ "ivec2", "group__MathAPI.html#classMathAPI_1_1ivec2", "group__MathAPI_classMathAPI_1_1ivec2" ],
+      [ "ivec3", "group__MathAPI.html#classMathAPI_1_1ivec3", "group__MathAPI_classMathAPI_1_1ivec3" ],
+      [ "lvec3", "group__MathAPI.html#classMathAPI_1_1lvec3", "group__MathAPI_classMathAPI_1_1lvec3" ]
+    ] ],
+    [ "UI", "namespaceUI.html", [
+      [ "Slot", "group__UI.html#classUI_1_1Slot", "group__UI_classUI_1_1Slot" ]
+    ] ],
+    [ "World", "namespaceWorld.html", [
+      [ "Block", "group__World.html#classWorld_1_1Block", "group__World_classWorld_1_1Block" ],
+      [ "BlockArray", "group__World.html#classWorld_1_1BlockArray", "group__World_classWorld_1_1BlockArray" ],
+      [ "BlockState", "group__World.html#classWorld_1_1BlockState", "group__World_classWorld_1_1BlockState" ],
+      [ "BlockStruct", "group__World.html#classWorld_1_1BlockStruct", "group__World_classWorld_1_1BlockStruct" ],
+      [ "Chunk", "group__World.html#classWorld_1_1Chunk", "group__World_classWorld_1_1Chunk" ],
+      [ "Entity", "group__World.html#classWorld_1_1Entity", "group__World_classWorld_1_1Entity" ],
+      [ "Player", "group__World.html#classWorld_1_1Player", null ]
+    ] ]
 ];
